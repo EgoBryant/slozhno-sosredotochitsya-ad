@@ -1,3 +1,5 @@
+// ✅ ИСПРАВЛЕННЫЙ КОД
+
 const themeButtons = document.querySelectorAll('.header__theme-menu-button');
 
 themeButtons.forEach((button) => {
@@ -23,25 +25,29 @@ themeButtons.forEach((button) => {
 });
 
 function changeTheme(theme) {
-  document.body.className = 'page';
-  document.body.classList.add(`theme_${theme}`);
+  const page = document.querySelector('.page');
+  // Убираем старые классы тем
+  page.classList.remove('theme_light', 'theme_dark', 'theme_auto');
+  // Добавляем новый класс темы
+  page.classList.add(`theme_${theme}`);
   localStorage.setItem('theme', theme);
 }
 
 function initTheme() {
-  const theme = localStorage.getItem('theme');
-  if (theme) {
-    changeTheme(theme);
-    themeButtons.forEach((btn) => {
-      btn.classList.remove('header__theme-menu-button_active');
-      btn.removeAttribute('disabled');
-    });
-    document
-      .querySelector(`.header__theme-menu-button_type_${theme}`)
-      .classList.add('header__theme-menu-button_active');
-    document
-      .querySelector(`.header__theme-menu-button_type_${theme}`)
-      .setAttribute('disabled', true);
+  const theme = localStorage.getItem('theme') || 'auto';
+  changeTheme(theme);
+  
+  themeButtons.forEach((btn) => {
+    btn.classList.remove('header__theme-menu-button_active');
+    btn.removeAttribute('disabled');
+  });
+  
+  const activeButton = document.querySelector(
+    `.header__theme-menu-button_type_${theme}`
+  );
+  if (activeButton) {
+    activeButton.classList.add('header__theme-menu-button_active');
+    activeButton.setAttribute('disabled', true);
   }
 }
 
