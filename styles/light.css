@@ -1,40 +1,37 @@
-.page.theme_light {
-	--background-color: var(--color-pink-seventh, #fff1f7);
-	--background-image: url('../images/cover-image-light.png');
-	--title-color: var(--color-pink-sixth, #ffc2e6);
-	--header-text-color: var(--color-grey, #353430);
-	--decorated-color: var(--color-grey, #353430);
-	--decorated-color-40: var(--color-grey-40, #35343040);
-	--section-title-color: var(--color-grey, #353430);
-	--article-title-color: var(--color-grey, #353430);
-	--accent-color: var(--color-pink-fifth, #ff8dcb);
-	--text-color: var(--color-grey, #f1b2ce);
-	--hover-color: var(--color-pink-fourth, #353430);
-	--focus-color: var(--color-pink-fourth, #353430);
-}
-
-.page.theme_light .recording {
-	display: none;
+:root.theme-light {
+  --bg-color: #fff1f7;
+  --title-decor-color: #353430;
+  --content__section-title-color: #353430;
+  --bg-image: url(../images/cover-image-light.png);
+  --accent-color: #ff8dcb;
+  --title-color: #ffc2e6;
+  --main-font-color: #353430;
+  --hover-border-color: rgba(50 49 45/ 0.4);
+  --button-color: #353430;
+  --decor-color: #353430;
 }
 
 @media (prefers-color-scheme: light) {
-	:root {
-		--background-color: var(--color-pink-seventh, #fff1f7);
-		--background-image: url('../images/cover-image-light.png');
-		--title-color: var(--color-pink-sixth, #ffc2e6);
-		--header-text-color: var(--color-grey, #353430);
-		--decorated-color: var(--color-grey, #353430);
-		--decorated-color-40: var(--color-grey-40, #35343040);
-		--section-title-color: var(--color-grey, #353430);
-		--article-title-color: var(--color-grey, #353430);
-		--accent-color: var(--color-pink-fifth, #ff8dcb);
-		--text-color: var(--color-grey, #f1b2ce);
-		--hover-color: var(--color-pink-fourth, #353430);
-		--focus-color: var(--color-pink-fourth, #353430);
-		--recording-display: none;
-	}
+  
+  :root {
+    --bg-color: #fff1f7;
+    --bg-image: url(../images/cover-image-light.png);
+    --title-decor-color: #353430;
+    --content__section-title-color: #353430;
+    --accent-color: #ff8dcb;
+    --title-color: #ffc2e6;
+    --main-font-color: #353430;
+    --decor-color: #353430;
+    --hover-border-color: rgba(50 49 45/ 0.4);
+    --button-color: #353430;
 
-	.recording {
-		display: none;
-	}
+  }
+
+  .header__decorative-inscription {
+    display: none;
+  }
+}
+
+.theme-light .header__decorative-inscription {
+  display: none;
 }
